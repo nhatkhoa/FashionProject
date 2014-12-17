@@ -13,6 +13,9 @@ namespace AGK.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+
+        [Required(ErrorMessage = "Bạn cần phải nhập tên Danh Mục")]
+        [Display(Name = "Danh Mục")]
         public string Name { get; set; }
         public ICollection<Product> Products { get; set; }
 

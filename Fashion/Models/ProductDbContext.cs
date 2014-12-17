@@ -16,7 +16,7 @@ namespace AGK.Models
         }
         public DbSet<Product> Products { set; get; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Manufacturer> Manufacturers { get; set; }
+        public DbSet<Brand> Brands { get; set; }
         public DbSet<Image> Images { get; set; }
     }
 }

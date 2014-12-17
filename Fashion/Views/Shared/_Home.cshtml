@@ -1,10 +1,9 @@
 ﻿<!doctype html>
-<!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
-<html lang="en">
+ 
+<html lang="en" ng-app="Store" ng-controller="HomeCtrl">
 <!--<![endif]-->
 <head>
-    <title>Flatastic - Home</title>
+    <title>{{message}}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!--meta info-->
@@ -13,6 +12,7 @@
     <meta name="description" content="">
     <link rel="icon" type="image/ico" href="~/Content/images/fav.ico">
        @Styles.Render("~/css")
+    
 </head>
     <body>
 
@@ -24,27 +24,9 @@
             <![endif]-->
             <!--markup header-->
             <header role="banner">
-                <!--header top part-->
-                <section class="h_top_part">
-                    <div class="container">
-                        <div class="row clearfix">
-                            <div class="col-lg-4 col-md-4 col-sm-5 t_xs_align_c">
-                                <p class="f_size_small">Welcome visitor can you	<a href="#" data-popup="#login_popup">Log In</a> or <a href="#">Create an Account</a> </p>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-2 t_align_c t_xs_align_c">
-                                <p class="f_size_small">Call us toll free: <b class="color_dark">(123) 456-7890</b></p>
-                            </div>
-                            <nav class="col-lg-4 col-md-4 col-sm-5 t_align_r t_xs_align_c">
-                                <ul class="d_inline_b horizontal_list clearfix f_size_small users_nav">
-                                    <li><a href="#" class="default_t_color">My Account</a></li>
-                                    <li><a href="#" class="default_t_color">Orders List</a></li>
-                                    <li><a href="#" class="default_t_color">Wishlist</a></li>
-                                    <li><a href="#" class="default_t_color">Checkout</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </section>
+                
+                @Html.Partial("~/Views/Shared/_Header.cshtml")
+
                 <!--header bottom part-->
                 <section class="h_bot_part container">
                     <div class="clearfix row">
@@ -62,105 +44,8 @@
                                 <li class="m_left_5">
                                     <a role="button" href="#" class="button_type_1 color_dark d_block bg_light_color_1 r_corners tr_delay_hover box_s_none"><i class="fa fa-files-o f_size_ex_large"></i><span class="count circle t_align_c">3</span></a>
                                 </li>
-                                <!--language settings-->
-                                <li class="m_left_5 relative container3d">
-                                    <a role="button" href="#" class="button_type_2 color_dark d_block bg_light_color_1 r_corners tr_delay_hover box_s_none" id="lang_button"><img class="d_inline_middle m_right_10 m_mxs_right_0" src="~/Content/images/flag_en.jpg" alt=""><span class="d_mxs_none">English</span></a>
-                                    <ul class="dropdown_list top_arrow color_light">
-                                        <li><a href="#" class="tr_delay_hover color_light"><img class="d_inline_middle" src="~/Content/images/flag_en.jpg" alt="">English</a></li>
-                                        <li><a href="#" class="tr_delay_hover color_light"><img class="d_inline_middle" src="~/Content/images/flag_fr.jpg" alt="">French</a></li>
-                                        <li><a href="#" class="tr_delay_hover color_light"><img class="d_inline_middle" src="~/Content/images/flag_g.jpg" alt="">German</a></li>
-                                        <li><a href="#" class="tr_delay_hover color_light"><img class="d_inline_middle" src="~/Content/images/flag_i.jpg" alt="">Italian</a></li>
-                                        <li><a href="#" class="tr_delay_hover color_light"><img class="d_inline_middle" src="~/Content/images/flag_s.jpg" alt="">Spanish</a></li>
-                                    </ul>
-                                </li>
-                                <!--currency settings-->
-                                <li class="m_left_5 relative container3d">
-                                    <a role="button" href="#" class="button_type_2 color_dark d_block bg_light_color_1 r_corners tr_delay_hover box_s_none" id="currency_button"><span class="scheme_color">$</span> <span class="d_mxs_none">US Dollar</span></a>
-                                    <ul class="dropdown_list top_arrow color_light">
-                                        <li><a href="#" class="tr_delay_hover color_light"><span class="scheme_color">$</span> US Dollar</a></li>
-                                        <li><a href="#" class="tr_delay_hover color_light"><span class="scheme_color">&#8364;</span> Euro</a></li>
-                                        <li><a href="#" class="tr_delay_hover color_light"><span class="scheme_color">&#163;</span> Pound</a></li>
-                                    </ul>
-                                </li>
-                                <!--shopping cart-->
-                                <li class="m_left_5 relative container3d" id="shopping_button">
-                                    <a role="button" href="#" class="button_type_3 color_light bg_scheme_color d_block r_corners tr_delay_hover box_s_none">
-                                        <span class="d_inline_middle shop_icon m_mxs_right_0">
-                                            <i class="fa fa-shopping-cart"></i>
-                                            <span class="count tr_delay_hover type_2 circle t_align_c">3</span>
-                                        </span>
-                                        <b class="d_mxs_none">$355</b>
-                                    </a>
-                                    <div class="shopping_cart top_arrow tr_all_hover r_corners">
-                                        <div class="f_size_medium sc_header">Recently added item(s)</div>
-                                        <ul class="products_list">
-                                            <li>
-                                                <div class="clearfix">
-                                                    <!--product image-->
-                                                    <img class="f_left m_right_10" src="~/Content/images/shopping_c_img_1.jpg" alt="">
-                                                    <!--product description-->
-                                                    <div class="f_left product_description">
-                                                        <a href="#" class="color_dark m_bottom_5 d_block">Cursus eleifend elit aenean auctor wisi et urna</a>
-                                                        <span class="f_size_medium">Product Code PS34</span>
-                                                    </div>
-                                                    <!--product price-->
-                                                    <div class="f_left f_size_medium">
-                                                        <div class="clearfix">
-                                                            1 x <b class="color_dark">$99.00</b>
-                                                        </div>
-                                                        <button class="close_product color_dark tr_hover"><i class="fa fa-times"></i></button>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="clearfix">
-                                                    <!--product image-->
-                                                    <img class="f_left m_right_10" src="~/Content/images/shopping_c_img_2.jpg" alt="">
-                                                    <!--product description-->
-                                                    <div class="f_left product_description">
-                                                        <a href="#" class="color_dark m_bottom_5 d_block">Cursus eleifend elit aenean auctor wisi et urna</a>
-                                                        <span class="f_size_medium">Product Code PS34</span>
-                                                    </div>
-                                                    <!--product price-->
-                                                    <div class="f_left f_size_medium">
-                                                        <div class="clearfix">
-                                                            1 x <b class="color_dark">$99.00</b>
-                                                        </div>
-                                                        <button class="close_product color_dark tr_hover"><i class="fa fa-times"></i></button>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="clearfix">
-                                                    <!--product image-->
-                                                    <img class="f_left m_right_10" src="~/Content/images/shopping_c_img_3.jpg" alt="">
-                                                    <!--product description-->
-                                                    <div class="f_left product_description">
-                                                        <a href="#" class="color_dark m_bottom_5 d_block">Cursus eleifend elit aenean auctor wisi et urna</a>
-                                                        <span class="f_size_medium">Product Code PS34</span>
-                                                    </div>
-                                                    <!--product price-->
-                                                    <div class="f_left f_size_medium">
-                                                        <div class="clearfix">
-                                                            1 x <b class="color_dark">$99.00</b>
-                                                        </div>
-                                                        <button class="close_product color_dark tr_hover"><i class="fa fa-times"></i></button>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <!--total price-->
-                                        <ul class="total_price bg_light_color_1 t_align_r color_dark">
-                                            <li class="m_bottom_10">Tax: <span class="f_size_large sc_price t_align_l d_inline_b m_left_15">$0.00</span></li>
-                                            <li class="m_bottom_10">Discount: <span class="f_size_large sc_price t_align_l d_inline_b m_left_15">$37.00</span></li>
-                                            <li>Total: <b class="f_size_large bold scheme_color sc_price t_align_l d_inline_b m_left_15">$999.00</b></li>
-                                        </ul>
-                                        <div class="sc_footer t_align_c">
-                                            <a href="#" role="button" class="button_type_4 d_inline_middle bg_light_color_2 r_corners color_dark t_align_c tr_all_hover m_mxs_bottom_5">View Cart</a>
-                                            <a href="#" role="button" class="button_type_4 bg_scheme_color d_inline_middle r_corners tr_all_hover color_light">Checkout</a>
-                                        </div>
-                                    </div>
-                                </li>
+
+                                @Html.Partial("/Views/Shared/_Cart.cshtml")
                             </ul>
                         </div>
                     </div>
@@ -269,8 +154,8 @@
                                             <li><a class="color_dark tr_delay_hover" href="wishlist.html">Wishlist</a></li>
                                             <li><a class="color_dark tr_delay_hover" href="compare_products.html">Compare Products</a></li>
                                             <li><a class="color_dark tr_delay_hover" href="checkout.html">Checkout</a></li>
-                                            <li><a class="color_dark tr_delay_hover" href="manufacturers.html">Manufacturers</a></li>
-                                            <li><a class="color_dark tr_delay_hover" href="manufacturer_details.html">Manufacturer Page</a></li>
+                                            <li><a class="color_dark tr_delay_hover" href="manufacturers.html">Brands</a></li>
+                                            <li><a class="color_dark tr_delay_hover" href="manufacturer_details.html">Brand Page</a></li>
                                             <li><a class="color_dark tr_delay_hover" href="orders_list.html">Orders List</a></li>
                                             <li><a class="color_dark tr_delay_hover" href="order_details.html">Order Details</a></li>
                                         </ul>
@@ -316,34 +201,7 @@
                     </div>
                 </section>
             </header>
-            <!--slider-->
-            <div class="camera_wrap m_bottom_0">
-                <div data-src="~/Content/images/slide_02.jpg" data-custom-thumb="~/Content/images/slide_02.jpg">
-                    <div class="camera_caption_1 fadeFromTop t_align_c d_xs_none">
-                        <div class="f_size_large color_light tt_uppercase slider_title_3 m_bottom_5">Meet New Theme</div>
-                        <hr class="slider_divider d_inline_b m_bottom_5">
-                        <div class="color_light slider_title tt_uppercase t_align_c m_bottom_45 m_sm_bottom_20"><b>Attractive &amp; Elegant<br>HTML Theme</b></div>
-                        <div class="color_light slider_title_2 m_bottom_45">$<b>15.00</b></div>
-                        <a href="#" role="button" class="tr_all_hover button_type_4 bg_scheme_color color_light r_corners tt_uppercase">Buy Now</a>
-                    </div>
-                </div>
-                <div data-src="~/Content/images/slide_01.jpg" data-custom-thumb="~/Content/images/slide_01.jpg">
-                    <div class="camera_caption_2 fadeIn t_align_c d_xs_none">
-                        <div class="f_size_large tt_uppercase slider_title_3 scheme_color">New arrivals</div>
-                        <hr class="slider_divider type_2 m_bottom_5 d_inline_b">
-                        <div class="color_light slider_title tt_uppercase t_align_c m_bottom_65 m_sm_bottom_20"><b><span class="scheme_color">Spring/Summer 2014</span><br><span class="color_dark">Ready-To-Wear</span></b></div>
-                        <a href="#" role="button" class="d_sm_inline_b button_type_4 bg_scheme_color color_light r_corners tt_uppercase tr_all_hover">View Collection</a>
-                    </div>
-                </div>
-                <div data-src="~/Content/images/slide_03.jpg" data-custom-thumb="~/Content/images/slide_03.jpg">
-                    <div class="camera_caption_3 fadeFromTop t_align_c d_xs_none">
-                        <img src="~/Content/images/slider_layer_img.png" alt="" class="m_bottom_5">
-                        <div class="color_light slider_title tt_uppercase t_align_c m_bottom_60 m_sm_bottom_20"><b class="color_dark">up to 70% off</b></div>
-                        <a href="#" role="button" class="d_sm_inline_b button_type_4 bg_scheme_color color_light r_corners tt_uppercase tr_all_hover">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-            <!--content-->
+
             <div class="page_content_offset">
                 @RenderBody()
             </div>
@@ -442,7 +300,7 @@
                                     <li><a class="color_light tr_delay_hover" href="#">About us<i class="fa fa-angle-right"></i></a></li>
                                     <li><a class="color_light tr_delay_hover" href="#">New collection<i class="fa fa-angle-right"></i></a></li>
                                     <li><a class="color_light tr_delay_hover" href="#">Best sellers<i class="fa fa-angle-right"></i></a></li>
-                                    <li><a class="color_light tr_delay_hover" href="#">Manufacturers<i class="fa fa-angle-right"></i></a></li>
+                                    <li><a class="color_light tr_delay_hover" href="#">Brands<i class="fa fa-angle-right"></i></a></li>
                                     <li><a class="color_light tr_delay_hover" href="#">Privacy policy<i class="fa fa-angle-right"></i></a></li>
                                     <li><a class="color_light tr_delay_hover" href="#">Terms &amp; condition<i class="fa fa-angle-right"></i></a></li>
                                 </ul>
@@ -473,189 +331,15 @@
                 </div>
             </footer>
         </div>
-        <!--social widgets-->
-        <!--login popup-->
-        <div class="popup_wrap d_none" id="login_popup">
-            <section class="popup r_corners shadow">
-                <button class="bg_tr color_dark tr_all_hover text_cs_hover close f_size_large"><i class="fa fa-times"></i></button>
-                <h3 class="m_bottom_20 color_dark">Log In</h3>
-                <form>
-                    <ul>
-                        <li class="m_bottom_15">
-                            <label for="username" class="m_bottom_5 d_inline_b">Username</label><br>
-                            <input type="text" name="" id="username" class="r_corners full_width">
-                        </li>
-                        <li class="m_bottom_25">
-                            <label for="password" class="m_bottom_5 d_inline_b">Password</label><br>
-                            <input type="password" name="" id="password" class="r_corners full_width">
-                        </li>
-                        <li class="m_bottom_15">
-                            <input type="checkbox" class="d_none" id="checkbox_10"><label for="checkbox_10">Remember me</label>
-                        </li>
-                        <li class="clearfix m_bottom_30">
-                            <button class="button_type_4 tr_all_hover r_corners f_left bg_scheme_color color_light f_mxs_none m_mxs_bottom_15">Log In</button>
-                            <div class="f_right f_size_medium f_mxs_none">
-                                <a href="#" class="color_dark">Forgot your password?</a><br>
-                                <a href="#" class="color_dark">Forgot your username?</a>
-                            </div>
-                        </li>
-                    </ul>
-                </form>
-                <footer class="bg_light_color_1 t_mxs_align_c">
-                    <h3 class="color_dark d_inline_middle d_mxs_block m_mxs_bottom_15">New Customer?</h3>
-                    <a href="#" role="button" class="tr_all_hover r_corners button_type_4 bg_dark_color bg_cs_hover color_light d_inline_middle m_mxs_left_0">Create an Account</a>
-                </footer>
-            </section>
-        </div>
+        
         
 
-        <!--Popup Hiện Sản Phẩm-->
-        <div class="popup_wrap d_none" id="quick_view_product">
-            <section class="popup r_corners shadow">
-                <button class="bg_tr color_dark tr_all_hover text_cs_hover close f_size_large"><i class="fa fa-times"></i></button>
-                <div class="clearfix">
-                    <div class="custom_scrollbar">
-                        <!--left popup column-->
-                        <div class="f_left half_column">
-                            <div class="relative d_inline_b m_bottom_10 qv_preview">
-                                <span class="hot_stripe"><img src="~/Content/images/sale_product.png" alt=""></span>
-                                <img src="~/Content/images/quick_view_img_1.jpg" class="tr_all_hover" alt="">
-                            </div>
-                            <!--carousel-->
-                            <div class="relative qv_carousel_wrap m_bottom_20">
-                                <button class="button_type_11 t_align_c f_size_ex_large bg_cs_hover r_corners d_inline_middle bg_tr tr_all_hover qv_btn_prev">
-                                    <i class="fa fa-angle-left "></i>
-                                </button>
-                                <ul class="qv_carousel d_inline_middle">
-                                    <li data-src="~/Content/images/quick_view_img_1.jpg"><img src="~/Content/images/quick_view_img_4.jpg" alt=""></li>
-                                    <li data-src="~/Content/images/quick_view_img_2.jpg"><img src="~/Content/images/quick_view_img_5.jpg" alt=""></li>
-                                    <li data-src="~/Content/images/quick_view_img_3.jpg"><img src="~/Content/images/quick_view_img_6.jpg" alt=""></li>
-                                    <li data-src="~/Content/images/quick_view_img_1.jpg"><img src="~/Content/images/quick_view_img_4.jpg" alt=""></li>
-                                    <li data-src="~/Content/images/quick_view_img_2.jpg"><img src="~/Content/images/quick_view_img_5.jpg" alt=""></li>
-                                    <li data-src="~/Content/images/quick_view_img_3.jpg"><img src="~/Content/images/quick_view_img_6.jpg" alt=""></li>
-                                </ul>
-                                <button class="button_type_11 t_align_c f_size_ex_large bg_cs_hover r_corners d_inline_middle bg_tr tr_all_hover qv_btn_next">
-                                    <i class="fa fa-angle-right "></i>
-                                </button>
-                            </div>
-                            <div class="d_inline_middle">Share this:</div>
-                            <div class="d_inline_middle m_left_5">
-                                <!-- AddThis Button BEGIN -->
-                                <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-                                    <a class="addthis_button_preferred_1"></a>
-                                    <a class="addthis_button_preferred_2"></a>
-                                    <a class="addthis_button_preferred_3"></a>
-                                    <a class="addthis_button_preferred_4"></a>
-                                    <a class="addthis_button_compact"></a>
-                                    <a class="addthis_counter addthis_bubble_style"></a>
-                                </div>
-                                <!-- AddThis Button END -->
-                            </div>
-                        </div>
-                        <!--right popup column-->
-                        <div class="f_right half_column">
-                            <!--description-->
-                            <h2 class="m_bottom_10"><a href="#" class="color_dark fw_medium">Eget elementum vel</a></h2>
-                            <div class="m_bottom_10">
-                                <!--rating-->
-                                <ul class="horizontal_list d_inline_middle type_2 clearfix rating_list tr_all_hover">
-                                    <li class="active">
-                                        <i class="fa fa-star-o empty tr_all_hover"></i>
-                                        <i class="fa fa-star active tr_all_hover"></i>
-                                    </li>
-                                    <li class="active">
-                                        <i class="fa fa-star-o empty tr_all_hover"></i>
-                                        <i class="fa fa-star active tr_all_hover"></i>
-                                    </li>
-                                    <li class="active">
-                                        <i class="fa fa-star-o empty tr_all_hover"></i>
-                                        <i class="fa fa-star active tr_all_hover"></i>
-                                    </li>
-                                    <li class="active">
-                                        <i class="fa fa-star-o empty tr_all_hover"></i>
-                                        <i class="fa fa-star active tr_all_hover"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star-o empty tr_all_hover"></i>
-                                        <i class="fa fa-star active tr_all_hover"></i>
-                                    </li>
-                                </ul>
-                                <a href="#" class="d_inline_middle default_t_color f_size_small m_left_5">1 Review(s) </a>
-                            </div>
-                            <hr class="m_bottom_10 divider_type_3">
-                            <table class="description_table m_bottom_10">
-                                <tr>
-                                    <td>Manufacturer:</td>
-                                    <td><a href="#" class="color_dark">Chanel</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Availability:</td>
-                                    <td><span class="color_green">in stock</span> 20 item(s)</td>
-                                </tr>
-                                <tr>
-                                    <td>Product Code:</td>
-                                    <td>PS06</td>
-                                </tr>
-                            </table>
-                            <h5 class="fw_medium m_bottom_10">Product Dimensions and Weight</h5>
-                            <table class="description_table m_bottom_5">
-                                <tr>
-                                    <td>Product Length:</td>
-                                    <td><span class="color_dark">10.0000M</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Product Weight:</td>
-                                    <td>10.0000KG</td>
-                                </tr>
-                            </table>
-                            <hr class="divider_type_3 m_bottom_10">
-                            <p class="m_bottom_10">Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consecvtetuer adipiscing elit. </p>
-                            <hr class="divider_type_3 m_bottom_15">
-                            <div class="m_bottom_15">
-                                <s class="v_align_b f_size_ex_large">$152.00</s><span class="v_align_b f_size_big m_left_5 scheme_color fw_medium">$102.00</span>
-                            </div>
-                            <table class="description_table type_2 m_bottom_15">
-                                <tr>
-                                    <td class="v_align_m">Size:</td>
-                                    <td class="v_align_m">
-                                        <div class="custom_select f_size_medium relative d_inline_middle">
-                                            <div class="select_title r_corners relative color_dark">s</div>
-                                            <ul class="select_list d_none"></ul>
-                                            <select name="product_name">
-                                                <option value="s">s</option>
-                                                <option value="m">m</option>
-                                                <option value="l">l</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="v_align_m">Quantity:</td>
-                                    <td class="v_align_m">
-                                        <div class="clearfix quantity r_corners d_inline_middle f_size_medium color_dark">
-                                            <button class="bg_tr d_block f_left" data-direction="down">-</button>
-                                            <input type="text" name="" readonly value="1" class="f_left">
-                                            <button class="bg_tr d_block f_left" data-direction="up">+</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <div class="clearfix m_bottom_15">
-                                <button class="button_type_12 r_corners bg_scheme_color color_light tr_delay_hover f_left f_size_large">Add to Cart</button>
-                                <button class="button_type_12 bg_light_color_2 tr_delay_hover f_left r_corners color_dark m_left_5 p_hr_0"><i class="fa fa-heart-o f_size_big"></i><span class="tooltip tr_all_hover r_corners color_dark f_size_small">Wishlist</span></button>
-                                <button class="button_type_12 bg_light_color_2 tr_delay_hover f_left r_corners color_dark m_left_5 p_hr_0"><i class="fa fa-files-o f_size_big"></i><span class="tooltip tr_all_hover r_corners color_dark f_size_small">Compare</span></button>
-                                <button class="button_type_12 bg_light_color_2 tr_delay_hover f_left r_corners color_dark m_left_5 p_hr_0 relative"><i class="fa fa-question-circle f_size_big"></i><span class="tooltip tr_all_hover r_corners color_dark f_size_small">Ask a Question</span></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+       @Html.Partial("/Views/Shared/_Login.cshtml")
+        @Html.Partial("/Views/Shared/_PopupView.cshtml")
+        
         <button class="t_align_c r_corners tr_all_hover animate_ftl" id="go_to_top"><i class="fa fa-angle-up"></i></button>
         @Scripts.Render("/js")
-        @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/app")
-
 
 
     </body>

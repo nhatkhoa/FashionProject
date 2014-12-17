@@ -10,8 +10,6 @@ namespace AGK.Models
 {
     public class Customer
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid ID { get; set; }
         public string FullName { get; set; }
         public DateTime Birth { get; set; }

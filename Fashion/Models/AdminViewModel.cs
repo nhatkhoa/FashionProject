@@ -8,7 +8,7 @@ namespace IdentitySample.Models
     {
         public string Id { get; set; }
         [Required(AllowEmptyStrings = false)]
-        [Display(Name = "RoleName")]
+        [Display(Name = "Nhóm Quyền")]
         public string Name { get; set; }
     }
 

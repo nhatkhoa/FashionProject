@@ -2,7 +2,6 @@
     Layout = "~/Views/Shared/_Home.cshtml";
 }
 
-
 <div class="container">
     <h2 class="tt_uppercase m_bottom_20 color_dark heading1 animate_ftr">All Products</h2>
     <!--filter navigation of products-->
@@ -13,7 +12,7 @@
         <li class="m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter=".specials">Specials</button></li>
         <li class="m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter=".hit">Hit</button></li>
         <li class="m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter=".random">Random</button></li>
-        <li class="m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter=".rated">Rated</button></li>
+        <li class="m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button onclick="test()" class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter=".rated">Rated</button></li>
     </ul>
     <!--products-->
     <section class="products_container clearfix m_bottom_25 m_sm_bottom_15">
@@ -25,7 +24,7 @@
                     <!--hot product-->
                     <span class="hot_stripe"><img src="~/Content/images/hot_product.png" alt=""></span>
                     <img src="~/Content/images/product_img_1.jpg" class="tr_all_hover" alt="">
-                    <span data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+                    <span ng-click="changeView('Hoàng Võ Nhật Khoa');" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
                 </a>
                 <!--description and price of product-->
                 <figcaption>

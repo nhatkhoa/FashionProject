@@ -22,18 +22,16 @@ namespace IdentitySample
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+           
 
             bundles.Add(new StyleBundle("~/css").Include(
-                      "~/Content/css/bootstrap.min.css",
-                      "~/Content/css/camera.css",
-                      "~/Content/css/owl.carousel.css",
-                      "~/Content/css/owl.transitions.css",
-                      "~/Content/css/jquery.custom-scrollbar.css",
-                      "~/Content/css/style.css",
-                      "~/Content/css/font-awesome.min.css"));
+                      "~/Content/style/bootstrap.min.css",
+                      "~/Content/style/camera.css",
+                      "~/Content/style/owl.carousel.css",
+                      "~/Content/style/owl.transitions.css",
+                      "~/Content/style/jquery.custom-scrollbar.css",
+                      "~/Content/style/style.css",
+                      "~/Content/style/font-awesome.min.css"));
 
             bundles.Add(new ScriptBundle("~/js").Include(
                         "~/Content/js/jquery-2.1.0.min.js",
@@ -49,7 +47,12 @@ namespace IdentitySample
                         "~/Content/js/scripts.js"));
 
             bundles.Add(new ScriptBundle("~/app").Include(
+                        "~/Scripts/angular.min.js",
                         "~/Content/app.js"));
+
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                     "~/Content/bootstrap.min.css",
+                     "~/Content/site.css"));
             // --- Nén dữ liệu
             System.Web.Optimization.BundleTable.EnableOptimizations = true;
         }

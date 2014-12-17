@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 
 namespace AGK.Models
 {
-    public class Manufacturer
+    public class Brand
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+
+        [Required(ErrorMessage = "Bạn cần nhập tên Thương Hiệu")]
+        [Display(Name = "Thương Hiệu")]
         public String Name { get; set; }
     }   
 }
