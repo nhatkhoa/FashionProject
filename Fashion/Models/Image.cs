@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AGK.Models
+namespace Fashion.Models
 {
     public class Image
     {
@@ -14,6 +14,8 @@ namespace AGK.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid ID { get; set; }
         public Guid ProductID { get; set; }
+        public Product Product { get; set; }
+        [Display(Name="Link Hình Ảnh")]
         public String Link { get; set; }
 
     }

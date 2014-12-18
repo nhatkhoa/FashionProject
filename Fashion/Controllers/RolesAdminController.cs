@@ -1,4 +1,4 @@
-﻿using IdentitySample.Models;
+﻿
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Collections.Generic;
+using Fashion.Models;
 
 namespace Fashion.Controllers
 {

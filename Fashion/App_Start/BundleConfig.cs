@@ -25,13 +25,13 @@ namespace IdentitySample
            
 
             bundles.Add(new StyleBundle("~/css").Include(
-                      "~/Content/style/bootstrap.min.css",
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/style/font-awesome.min.css",
                       "~/Content/style/camera.css",
                       "~/Content/style/owl.carousel.css",
                       "~/Content/style/owl.transitions.css",
                       "~/Content/style/jquery.custom-scrollbar.css",
-                      "~/Content/style/style.css",
-                      "~/Content/style/font-awesome.min.css"));
+                      "~/Content/style/style.css"));
 
             bundles.Add(new ScriptBundle("~/js").Include(
                         "~/Content/js/jquery-2.1.0.min.js",
@@ -45,16 +45,18 @@ namespace IdentitySample
                         "~/Content/js/jquery.tweet.min.js",
                         "~/Content/js/jquery.custom-scrollbar.js",
                         "~/Content/js/scripts.js"));
-
+            
             bundles.Add(new ScriptBundle("~/app").Include(
                         "~/Scripts/angular.min.js",
+                        "~/Scripts/ngStorage.min.js",
+                        "~/Scripts/angular-filter.min.js",
                         "~/Content/app.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                      "~/Content/bootstrap.min.css",
                      "~/Content/site.css"));
             // --- Nén dữ liệu
-            System.Web.Optimization.BundleTable.EnableOptimizations = true;
+            System.Web.Optimization.BundleTable.EnableOptimizations = false;
         }
     }
 }

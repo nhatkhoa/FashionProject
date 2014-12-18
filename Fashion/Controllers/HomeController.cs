@@ -1,5 +1,5 @@
-﻿using AGK.Models;
-using AGK.ViewModels;
+﻿using Fashion.Models;
+using Fashion.ViewModels;
 using System.Web.Mvc;
 using System.Data.Entity;
 using System.Linq;
@@ -11,6 +11,19 @@ namespace Fashion.Controllers
     public class HomeController : Controller
     {
         private ProductDbContext _db = new ProductDbContext();
+
+        [ChildActionOnly]
+        public ActionResult Category()
+        {
+            return View(_db.Categories.ToList());
+        }
+
+        [ChildActionOnly]
+        public ActionResult Brand()
+        {
+           return View(_db.Brands.ToList());
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -32,7 +45,7 @@ namespace Fashion.Controllers
         }
 
 
-        public JsonResult GetProduct(Guid id )
+        public JsonResult GetProduct(Guid id)
         {
            // --- Truy vấn đến sản phẩm trùng id
             var sp = _db.Products
@@ -43,13 +56,13 @@ namespace Fashion.Controllers
                             Brand = p.Brand.Name,
                             Category = p.Category.Name,
                             // --- Trả về mảng các string cắt nhau bởi khoảng trắng
-                            Colors = p.Color.Split(' ').ToList(),
+                            Colors = p.Color,
                             // --- Chỉ select link của mỗi Image
                             Images = p.Images.Select(x => x.Link).ToList(),
                             Info = p.Info,
                             Cost = p.Cost,
                             ID = p.ID,
-                            Sizes = p.Size.Split(' ').ToList(),
+                            Sizes = p.Size,
                             InStock = p.Instock,
                             Name = p.Name
                         });
@@ -70,7 +83,10 @@ namespace Fashion.Controllers
                 ID = p.ID,
                 Brand = p.Brand.Name
             });
-            
+
+            if (temp == null)
+                return null;
+
             // --- Trả về danh sách dưới dạng JSON
             return Json(temp, JsonRequestBehavior.AllowGet);
         }

@@ -11,7 +11,7 @@ using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace IdentitySample.Models
+namespace Fashion.Models
 {
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
 
@@ -62,7 +62,7 @@ namespace IdentitySample.Models
             if (dataProtectionProvider != null)
             {
                 manager.UserTokenProvider =
-                    new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
+                    new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("Xiziu"));
             }
             return manager;
         }
@@ -103,7 +103,7 @@ namespace IdentitySample.Models
     // This is useful if you do not want to tear down the database each time you run the application.
     // public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
     // This example shows you how to create a new database if the Model changes
-    public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext> 
+    public class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext> 
     {
         protected override void Seed(ApplicationDbContext context) {
             InitializeIdentityForEF(context);

@@ -50,6 +50,6 @@ C:\Users\NHAT KHOA\Documents\Visual Studio 2013\Projects\Fashion\Fashion\bin\Mic
 C:\Users\NHAT KHOA\Documents\Visual Studio 2013\Projects\Fashion\Fashion\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\NHAT KHOA\Documents\Visual Studio 2013\Projects\Fashion\Fashion\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\NHAT KHOA\Documents\Visual Studio 2013\Projects\Fashion\Fashion\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\NHAT KHOA\Documents\Visual Studio 2013\Projects\Fashion\Fashion\obj\Debug\Fashion.csprojResolveAssemblyReference.cache
 C:\Users\NHAT KHOA\Documents\Visual Studio 2013\Projects\Fashion\Fashion\obj\Debug\Fashion.dll
 C:\Users\NHAT KHOA\Documents\Visual Studio 2013\Projects\Fashion\Fashion\obj\Debug\Fashion.pdb
-C:\Users\NHAT KHOA\Documents\Visual Studio 2013\Projects\Fashion\Fashion\obj\Debug\Fashion.csprojResolveAssemblyReference.cache

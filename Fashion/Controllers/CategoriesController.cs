@@ -6,13 +6,20 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using AGK.Models;
+using Fashion.Models;
 
 namespace Fashion.Controllers
 {
     public class CategoriesController : Controller
     {
         private ProductDbContext db = new ProductDbContext();
+
+        // Lấy danh sách Menu
+        [ChildActionOnly]
+        public ActionResult Menu()
+        {
+            return View(db.Categories.ToList());
+        }
 
         // GET: Categories
         public ActionResult Index()
@@ -35,12 +42,15 @@ namespace Fashion.Controllers
             return View(category);
         }
 
-
+        // GET: Categories/Create
         public ActionResult Create()
         {
             return View();
         }
 
+        // POST: Categories/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name")] Category category)
@@ -55,7 +65,7 @@ namespace Fashion.Controllers
             return View(category);
         }
 
-
+        // GET: Categories/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -70,7 +80,9 @@ namespace Fashion.Controllers
             return View(category);
         }
 
-        
+        // POST: Categories/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Name")] Category category)

@@ -2,7 +2,7 @@
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using IdentitySample.Models;
+using Fashion.Models;
 using Owin;
 using System;
 

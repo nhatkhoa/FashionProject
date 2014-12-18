@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AGK.Models
+namespace Fashion.Models
 {
     public class ProductDbContext : DbContext
     {

@@ -1,4 +1,4 @@
-﻿using IdentitySample.Models;
+﻿using Fashion.Models;
 using System.Data.Entity;
 using System.Web.Mvc;
 using System.Web.Optimization;
