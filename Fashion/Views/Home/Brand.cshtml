@@ -6,7 +6,7 @@
     <ul class="sub_menu">
         @foreach (var item in Model)
         {
-            <li>@Html.ActionLink(item.Name, "Products", new { id = item.ID }, new { @class = "color_dark tr_delay_hover" })</li>
+            <li>@Html.ActionLink(item.Name, "DanhMuc","SanPham", new { id = item.ID }, new { @class = "color_dark tr_delay_hover" })</li>
         }
     </ul>
 </div>

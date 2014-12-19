@@ -6,7 +6,7 @@
 
 <h2>Details</h2>
 
-<div>
+<div class ="col-md-6">
     <h4>Product</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -73,10 +73,28 @@
         <dd>
             @Html.DisplayFor(model => model.Instock)
         </dd>
-
+        <p>
+            @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = Model.ID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+
+    <div class="col-md-6">
+        <p>@Html.ActionLink("Up Hình", "UploadImage", new { id = Model.ID }, new { @class = "btn btn-primary" })</p>
+        
+        @if (Model.Images.Count == 0)
+        {
+            <h3>Chưa có hình ảnh cho sản phẩm này ...</h3>
+        }
+        else
+        {
+            foreach (var item in Model.Images)
+            {
+                <a class="thumbnail col-md-5" href="#"><img src="../../@item.Link" /></a>
+            }
+        }
+        <h3>@ViewBag.Status</h3>
+    </div>
+    

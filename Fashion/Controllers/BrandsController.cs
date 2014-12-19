@@ -10,6 +10,7 @@ using Fashion.Models;
 
 namespace Fashion.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class BrandsController : Controller
     {
         private ProductDbContext db = new ProductDbContext();

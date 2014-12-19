@@ -4,24 +4,21 @@
 
 <div class="container" ng-controller="ShowCtrl as show">
     <h2 class="tt_uppercase m_bottom_20 color_dark heading1 animate_ftr">All Products</h2>
-    <!--filter navigation of products-->
     <ul class="horizontal_list clearfix tt_uppercase isotope_menu f_size_ex_large">
-        <li class="active m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter="*">All</button></li>
-      
-        <li ng-repeat="item in show.products | unique: 'Brand'" class="active m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter=".{{item.Brand}}">{{item.Brand}}</button></li>
-        <li ng-repeat="item in show.products | unique: 'Category'" class="active m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter=".{{item.Category}}">{{item.Category}}</button></li>
+        <li class="active m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter="*">Tất Cả</button></li>
+        <li ng-repeat="item in show.products | unique: 'Category'" class="active m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter="[tag='{{item.Category}}']">{{item.Category}}</button></li>
     </ul>
     <!--products-->
     <section class="products_container clearfix m_bottom_25 m_sm_bottom_15">
         <!--product item-->
-        <div ng-repeat="item in show.products" class="product_item {{item.Brand}}">
+        <div ng-repeat="item in show.products" class="product_item" tag="{{item.Category}}">
             <figure class="r_corners photoframe shadow relative hit animate_ftb long">
                 <!--product preview-->
-                <a href="#" class="d_block relative pp_wrap ">
+                <a href="#" class="d_block relative pp_wrap img-list">
                     <!--hot product-->
                     <span class="hot_stripe"><img src="~/Content/images/hot_product.png" alt=""></span>
-                    <img c ng-show="item.Image !== null" ng-src="item.Image" class="tr_all_hover" alt="">
-                    <img ng-show="item.Image === null" src="~/Content/images/no.jpg" class="tr_all_hover" style="max-width : 250px" alt="">
+                    <img ng-show="item.Image !== null" ng-src="../../{{item.Image}}" class="tr_all_hover"  alt="">
+                    <img ng-show="item.Image === null" src="~/Content/images/no.jpg" class="tr_all_hover" alt="">
                     <span ng-click="show.popup(item.ID);" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
                 </a>
                 <!--description and price of product-->

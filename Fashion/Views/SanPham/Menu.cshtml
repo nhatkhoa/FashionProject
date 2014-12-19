@@ -1,0 +1,36 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<Fashion.Models.Category>
+<div class="sub_menu_wrap top_arrow d_xs_none type_2 tr_all_hover clearfix r_corners">
+    <ul class="sub_menu">
+        @foreach (var item in Model)
+        {
+            <li>@Html.ActionLink(item.Name, "DanhMuc", "SanPham", new { id = item.ID }, new { @class = "color_dark tr_delay_hover" })</li>
+        }
+    </ul>
+</div>
+
+<figure class="widget animate_ftr shadow r_corners wrapper m_bottom_30">
+    <figcaption>
+        <h3 class="color_light">Danh Mục Sản Phẩm</h3>
+    </figcaption>
+    <div class="widget_content">
+        <ul class="categories_list">
+            @foreach (var item in Model)
+            {
+                // --- Nếu danh mục đang được chọn
+                if (int.Parse(Url.RequestContext.RouteData.Values["id"].ToString()) == item.ID)
+                {
+                    <li class="active"><b>@Html.ActionLink(" + " + item.Name, "DanhMuc", "SanPham", new {id = item.ID}, new {@class = "f_size_large scheme_color d_block relative "})</b></li>
+                }
+                else
+                {
+                    <li>@Html.ActionLink(item.Name, "DanhMuc", "SanPham", new { id = item.ID }, new { @class = "f_size_large scheme_color d_block relative" })</li>
+                }
+            }
+            
+
+        </ul>
+    </div>
+</figure>

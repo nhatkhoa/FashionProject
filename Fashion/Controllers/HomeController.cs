@@ -81,7 +81,8 @@ namespace Fashion.Controllers
                 Category = p.Category.Name,
                 Cost = p.Cost,
                 ID = p.ID,
-                Brand = p.Brand.Name
+                Brand = p.Brand.Name,
+                Image = p.Images.FirstOrDefault().Link
             });
 
             if (temp == null)

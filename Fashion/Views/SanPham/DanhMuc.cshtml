@@ -1,0 +1,448 @@
+﻿
+@{
+    // --- Chọn layout mặc định
+    Layout = "~/Views/Shared/_Home.cshtml";
+}
+
+<div class="container" ng-controller="ProductCtrl as pro">
+
+    <div class="row clearfix">
+        <aside class="col-lg-3 col-md-3 col-sm-3 m_xs_bottom_30">
+            <!--widgets-->
+            @Html.Action("Menu")
+            <!--banner-->
+            <a href="#" class="widget animate_ftr d_block r_corners m_bottom_30">
+                <img src="~/Content/images/banner_img_6.jpg" alt="">
+            </a>
+            <!--Bestsellers-->
+            <figure class="widget animate_ftr shadow r_corners wrapper m_bottom_30">
+                <figcaption>
+                    <h3 class="color_light">Hàng Bán Chạy Nhất</h3>
+                </figcaption>
+                <div class="widget_content">
+                    <div class="clearfix m_bottom_15">
+                        <img src="~/Content/images/bestsellers_img_1.jpg" alt="" class="f_left m_right_15 m_sm_bottom_10 f_sm_none f_xs_left m_xs_bottom_0">
+                        <a href="#" class="color_dark d_block bt_link">Ut dolor dapibus</a>
+                        <!--rating-->
+                        <ul class="horizontal_list clearfix d_inline_b rating_list type_2 tr_all_hover m_bottom_10">
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                        </ul>
+                        <p class="scheme_color">$61.00</p>
+                    </div>
+                    <hr class="m_bottom_15">
+                    <div class="clearfix m_bottom_15">
+                        <img src="~/Content/images/bestsellers_img_2.jpg" alt="" class="f_left m_right_15 m_sm_bottom_10 f_sm_none f_xs_left m_xs_bottom_0">
+                        <a href="#" class="color_dark d_block bt_link">Elementum vel</a>
+                        <!--rating-->
+                        <ul class="horizontal_list clearfix d_inline_b rating_list type_2 tr_all_hover m_bottom_10">
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                        </ul>
+                        <p class="scheme_color">$57.00</p>
+                    </div>
+                    <hr class="m_bottom_15">
+                    <div class="clearfix m_bottom_5">
+                        <img src="~/Content/images/bestsellers_img_3.jpg" alt="" class="f_left m_right_15 m_sm_bottom_10 f_sm_none f_xs_left m_xs_bottom_0">
+                        <a href="#" class="color_dark d_block bt_link">Crsus eleifend elit</a>
+                        <!--rating-->
+                        <ul class="horizontal_list clearfix d_inline_b rating_list type_2 tr_all_hover m_bottom_10">
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                        </ul>
+                        <p class="scheme_color">$24.00</p>
+                    </div>
+                </div>
+            </figure>
+            <!--tags-->
+            <figure class="widget animate_ftr shadow r_corners wrapper">
+                <figcaption>
+                    <h3 class="color_light">Tags</h3>
+                </figcaption>
+                <div class="widget_content">
+                    <div class="tags_list">
+                        <a href="#" class="color_dark d_inline_b v_align_b">accessories,</a>
+                        <a href="#" class="color_dark d_inline_b f_size_ex_large v_align_b">bestseller,</a>
+                        <a href="#" class="color_dark d_inline_b v_align_b">clothes,</a>
+                        <a href="#" class="color_dark d_inline_b f_size_big v_align_b">dresses,</a>
+                        <a href="#" class="color_dark d_inline_b v_align_b">fashion,</a>
+                        <a href="#" class="color_dark d_inline_b f_size_large v_align_b">men,</a>
+                        <a href="#" class="color_dark d_inline_b v_align_b">pants,</a>
+                        <a href="#" class="color_dark d_inline_b v_align_b">sale,</a>
+                        <a href="#" class="color_dark d_inline_b v_align_b">short,</a>
+                        <a href="#" class="color_dark d_inline_b f_size_ex_large v_align_b">skirt,</a>
+                        <a href="#" class="color_dark d_inline_b v_align_b">top,</a>
+                        <a href="#" class="color_dark d_inline_b f_size_big v_align_b">women</a>
+                    </div>
+                </div>
+            </figure>
+        </aside>
+        
+        {{pro.message}}
+       
+        <section class="col-lg-9 col-md-9 col-sm-9">
+            <div class="col-lg-7 col-md-8 col-sm-12 m_sm_bottom_10">
+                <p class="d_inline_middle f_size_medium">Sắp Xếp:</p>
+                <div class="clearfix d_inline_middle m_left_10">
+                    <div class="custom_select f_size_medium relative f_left">
+                        <div class="select_title r_corners relative color_dark">Ngẫu Nhiên</div>
+                        <ul class="select_list d_none"></ul>
+                        <select ng-model="$sort" name="product_name">
+                            <option value="'Cost'">Theo Giá</option>
+                            <option value="'Name'">Theo Tên</option>
+                            <option value="'Brand'">Theo Thương Hiệu</option>
+                        </select>
+                    </div>
+                </div>
+               
+            </div>
+            <ul class="horizontal_list clearfix tt_uppercase isotope_menu f_size_ex_large">
+                <li class="active m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter="*">Tất Cả</button></li>
+                <li ng-repeat="item in pro.products | unique: 'Category'" class="active m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr"><button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter="[tag='{{item.Category}}']">{{item.Category}}</button></li>
+            </ul>
+            <h2 ng-show="pro.products.length !== 0" class="tt_uppercase color_dark m_bottom_10 heading5 animate_ftr">Danh Sách Sản Phẩm</h2>
+            <h2 ng-show="pro.products.length === 0"  class="color_dark m_bottom_10 heading5 animate_ftr">Không có sản phẩm nào trong danh sách ...</h2>
+            <!--products-->
+
+            <section class="products_container a_type_2 category_grid clearfix m_bottom_25">
+                <div ng-repeat="item in pro.products | orderBy : $sort" class="product_item" tag="{{item.Category}}">
+                    <figure class="r_corners photoframe shadow relative hit animate_ftb long">
+                        <!--product preview-->
+                        <a href="#" class="d_block relative pp_wrap img-list2 ">
+                            <!--hot product-->
+                            <span class="hot_stripe"><img src="~/Content/images/hot_product.png" alt=""></span>
+                            <img ng-show="item.Image !== null" ng-src="../../{{item.Image}}" class="tr_all_hover" alt="">
+                            <img ng-show="item.Image === null" src="~/Content/images/no.jpg" class="tr_all_hover" alt="">
+                            <span ng-click="pro.popup(item.ID);" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+                        </a>
+                        <!--description and price of product-->
+                        <figcaption>
+                            <h5 class="m_bottom_10"><a href="#" class="color_dark">{{item.Name}}</a></h5>
+                            <div class="clearfix">
+                                <p class="scheme_color f_left f_size_large m_bottom_15">{{item.Cost | number: c0}} VNĐ</p>
+                                <!--rating-->
+                                <ul class="horizontal_list f_right clearfix rating_list tr_all_hover">
+                                    <li class="active">
+                                        <i class="fa fa-star-o empty tr_all_hover"></i>
+                                        <i class="fa fa-star active tr_all_hover"></i>
+                                    </li>
+                                    <li class="active">
+                                        <i class="fa fa-star-o empty tr_all_hover"></i>
+                                        <i class="fa fa-star active tr_all_hover"></i>
+                                    </li>
+                                    <li class="active">
+                                        <i class="fa fa-star-o empty tr_all_hover"></i>
+                                        <i class="fa fa-star active tr_all_hover"></i>
+                                    </li>
+                                    <li class="active">
+                                        <i class="fa fa-star-o empty tr_all_hover"></i>
+                                        <i class="fa fa-star active tr_all_hover"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star-o empty tr_all_hover"></i>
+                                        <i class="fa fa-star active tr_all_hover"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button ng-click="pro.cart(item)" class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0">Thêm Vào Giỏ</button>
+                        </figcaption>
+                    </figure>
+                </div>
+
+            </section>
+            <div class="row clearfix m_bottom_15">
+                <button class="btn btn-primary btn-lg btn-block" ng-click="pro.loadThem()"> Tải Thêm Sản Phẩm</button>
+            </div>
+            <!--banners-->
+            <div class="row clearfix m_bottom_45">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <a href="#" class="d_block animate_ftb h_md_auto m_xs_bottom_15 banner_type_2 r_corners red t_align_c tt_uppercase vc_child n_sm_vc_child">
+                        <span class="d_inline_middle">
+                            <img class="d_inline_middle m_md_bottom_5" src="~/Content/images/banner_img_3.png" alt="">
+                            <span class="d_inline_middle m_left_10 t_align_l d_md_block t_md_align_c">
+                                <b>100% Satisfaction</b><br><span class="color_dark">Guaranteed</span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <a href="#" class="d_block animate_ftb h_md_auto m_xs_bottom_15 banner_type_2 r_corners green t_align_c tt_uppercase vc_child n_sm_vc_child">
+                        <span class="d_inline_middle">
+                            <img class="d_inline_middle m_md_bottom_5" src="~/Content/images/banner_img_4.png" alt="">
+                            <span class="d_inline_middle m_left_10 t_align_l d_md_block t_md_align_c">
+                                <b>Free<br class="d_none d_sm_block"> Shipping</b><br><span class="color_dark">On All Items</span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="clearfix">
+                <h2 class="color_dark tt_uppercase f_left m_bottom_15 f_mxs_none heading5 animate_ftr">New Collection</h2>
+                <div class="f_right clearfix nav_buttons_wrap animate_fade f_mxs_none m_mxs_bottom_5">
+                    <button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large t_align_c bg_light_color_1 f_left tr_delay_hover r_corners nc_prev"><i class="fa fa-angle-left"></i></button>
+                    <button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large t_align_c bg_light_color_1 f_left m_left_5 tr_delay_hover r_corners nc_next"><i class="fa fa-angle-right"></i></button>
+                </div>
+            </div>
+            <!--bestsellers carousel-->
+            <div class="nc_carousel m_bottom_30 m_sm_bottom_20">
+                <figure class="r_corners photoframe animate_ftb long tr_all_hover type_2 t_align_c shadow relative">
+                    <!--product preview-->
+                    <a href="#" class="d_block relative pp_wrap m_bottom_15">
+                        <!--hot product-->
+                        <span class="hot_stripe type_2"><img src="~/Content/images/hot_product_type_2.png" alt=""></span>
+                        <img src="~/Content/images/product_img_5.jpg" class="tr_all_hover" alt="">
+                        <span role="button" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+                    </a>
+                    <!--description and price of product-->
+                    <figcaption class="p_vr_0">
+                        <h5 class="m_bottom_10"><a href="#" class="color_dark">Aliquam erat volutpat</a></h5>
+                        <div class="clearfix">
+                            <!--rating-->
+                            <ul class="horizontal_list d_inline_b m_bottom_10 type_2 clearfix rating_list tr_all_hover">
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                            </ul>
+                            <p class="scheme_color f_size_large m_bottom_15">$102.00</p>
+                        </div>
+                        <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15">Add to Cart</button>
+                        <div class="clearfix m_bottom_5">
+                            <ul class="horizontal_list d_inline_b l_width_divider">
+                                <li class="m_right_15 f_md_none m_md_right_0"><a href="#" class="color_dark">Add to Wishlist</a></li>
+                                <li class="f_md_none"><a href="#" class="color_dark">Add to Compare</a></li>
+                            </ul>
+                        </div>
+                    </figcaption>
+                </figure>
+                <figure class="r_corners photoframe animate_ftb long tr_all_hover type_2 t_align_c shadow relative">
+                    <!--product preview-->
+                    <a href="#" class="d_block relative pp_wrap m_bottom_15">
+                        <img src="~/Content/images/product_img_8.jpg" class="tr_all_hover" alt="">
+                        <span role="button" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+                    </a>
+                    <!--description and price of product-->
+                    <figcaption class="p_vr_0">
+                        <h5 class="m_bottom_10"><a href="#" class="color_dark">Eget elementum vel</a></h5>
+                        <div class="clearfix">
+                            <!--rating-->
+                            <ul class="horizontal_list d_inline_b m_bottom_10 type_2 clearfix rating_list tr_all_hover">
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                            </ul>
+                            <p class="scheme_color f_size_large m_bottom_15">$102.00</p>
+                        </div>
+                        <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15">Add to Cart</button>
+                        <div class="clearfix m_bottom_5">
+                            <ul class="horizontal_list d_inline_b l_width_divider">
+                                <li class="m_right_15 f_md_none m_md_right_0"><a href="#" class="color_dark">Add to Wishlist</a></li>
+                                <li class="f_md_none"><a href="#" class="color_dark">Add to Compare</a></li>
+                            </ul>
+                        </div>
+                    </figcaption>
+                </figure>
+                <figure class="r_corners photoframe animate_ftb long type_2 t_align_c shadow relative tr_all_hover">
+                    <!--product preview-->
+                    <a href="#" class="d_block relative pp_wrap m_bottom_15">
+                        <!--sale product-->
+                        <span class="hot_stripe type_2"><img src="~/Content/images/sale_product_type_2.png" alt=""></span>
+                        <img src="~/Content/images/product_img_4.jpg" class="tr_all_hover" alt="">
+                        <span role="button" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+                    </a>
+                    <!--description and price of product-->
+                    <figcaption class="p_vr_0">
+                        <h5 class="m_bottom_10"><a href="#" class="color_dark">Ut tellus dolor dapibus</a></h5>
+                        <div class="clearfix m_bottom_15">
+                            <!--rating-->
+                            <ul class="horizontal_list d_inline_b m_bottom_10 type_2 clearfix rating_list tr_all_hover">
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                            </ul>
+                            <p class="scheme_color f_size_large">$57.00</p>
+                        </div>
+                        <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15">Add to Cart</button>
+                        <div class="clearfix m_bottom_5">
+                            <ul class="horizontal_list d_inline_b l_width_divider">
+                                <li class="m_right_15 f_md_none m_md_right_0"><a href="#" class="color_dark">Add to Wishlist</a></li>
+                                <li class="f_md_none"><a href="#" class="color_dark">Add to Compare</a></li>
+                            </ul>
+                        </div>
+                    </figcaption>
+                </figure>
+                <figure class="r_corners photoframe animate_ftb long tr_all_hover type_2 t_align_c shadow relative">
+                    <!--product preview-->
+                    <a href="#" class="d_block relative wrapper pp_wrap m_bottom_15">
+                        <img src="~/Content/images/product_img_6.jpg" class="tr_all_hover" alt="">
+                        <span role="button" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Quick View</span>
+                    </a>
+                    <!--description and price of product-->
+                    <figcaption class="p_vr_0">
+                        <h5 class="m_bottom_10"><a href="#" class="color_dark">Aliquam erat volutpat</a></h5>
+                        <div class="clearfix">
+                            <!--rating-->
+                            <ul class="horizontal_list d_inline_b m_bottom_10 type_2 clearfix rating_list tr_all_hover">
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li class="active">
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star-o empty tr_all_hover"></i>
+                                    <i class="fa fa-star active tr_all_hover"></i>
+                                </li>
+                            </ul>
+                            <p class="scheme_color f_size_large m_bottom_15">$36.00</p>
+                        </div>
+                        <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15">Add to Cart</button>
+                        <div class="clearfix m_bottom_5">
+                            <ul class="horizontal_list d_inline_b l_width_divider">
+                                <li class="m_right_15 f_md_none m_md_right_0"><a href="#" class="color_dark">Add to Wishlist</a></li>
+                                <li class="f_md_none"><a href="#" class="color_dark">Add to Compare</a></li>
+                            </ul>
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+            <!--product brands-->
+            <div class="clearfix m_bottom_25 m_sm_bottom_20">
+                <h2 class="tt_uppercase color_dark f_left heading2 animate_fade f_mxs_none m_mxs_bottom_15">Product Brands</h2>
+                <div class="f_right clearfix nav_buttons_wrap animate_fade f_mxs_none">
+                    <button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large t_align_c bg_light_color_1 f_left tr_delay_hover r_corners pb_prev"><i class="fa fa-angle-left"></i></button>
+                    <button class="button_type_7 bg_cs_hover box_s_none f_size_ex_large t_align_c bg_light_color_1 f_left m_left_5 tr_delay_hover r_corners pb_next"><i class="fa fa-angle-right"></i></button>
+                </div>
+            </div>
+            <!--product brands carousel-->
+            <div class="product_brands with_sidebar m_sm_bottom_35">
+                <a href="#" class="d_block t_align_c animate_fade"><img src="~/Content/images/brand_logo.jpg" alt=""></a>
+                <a href="#" class="d_block t_align_c animate_fade"><img src="~/Content/images/brand_logo.jpg" alt=""></a>
+                <a href="#" class="d_block t_align_c animate_fade"><img src="~/Content/images/brand_logo.jpg" alt=""></a>
+                <a href="#" class="d_block t_align_c animate_fade"><img src="~/Content/images/brand_logo.jpg" alt=""></a>
+                <a href="#" class="d_block t_align_c animate_fade"><img src="~/Content/images/brand_logo.jpg" alt=""></a>
+                <a href="#" class="d_block t_align_c animate_fade"><img src="~/Content/images/brand_logo.jpg" alt=""></a>
+                <a href="#" class="d_block t_align_c animate_fade"><img src="~/Content/images/brand_logo.jpg" alt=""></a>
+                <a href="#" class="d_block t_align_c animate_fade"><img src="~/Content/images/brand_logo.jpg" alt=""></a>
+                <a href="#" class="d_block t_align_c animate_fade"><img src="~/Content/images/brand_logo.jpg" alt=""></a>
+                <a href="#" class="d_block t_align_c animate_fade"><img src="~/Content/images/brand_logo.jpg" alt=""></a>
+                <a href="#" class="d_block t_align_c animate_fade"><img src="~/Content/images/brand_logo.jpg" alt=""></a>
+                <a href="#" class="d_block t_align_c animate_fade"><img src="~/Content/images/brand_logo.jpg" alt=""></a>
+            </div>
+        </section>
+    </div>
+</div>

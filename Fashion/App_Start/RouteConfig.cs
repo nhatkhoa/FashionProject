@@ -14,6 +14,26 @@ namespace IdentitySample
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+         
+
+            routes.MapRoute(
+                name: "GetSanPham",
+                url: "SanPham/Get/{id}",
+                defaults: new { controller = "SanPham", action = "Get"}
+            );
+
+            routes.MapRoute(
+                name: "GetBrand",
+                url: "SanPhams/GetBrand/{id}/{page}",
+                defaults: new { controller = "SanPham", action = "GetBrand" }
+            );
+
+
+            routes.MapRoute(
+               name: "TimKiemTuKhoa",
+               url: "{controller}/{action}/{tukhoa}",
+               defaults: new { controller = "SanPhams", action = "TimKiem"}
+           );
         }
     }
 }

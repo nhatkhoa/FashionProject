@@ -27,7 +27,25 @@
 	1. Reset default browser styles
 
 ------------------------------------- */
+.img-list {
+    overflow : hidden; 
+    width : 230px;
+    height: 230px;
+}
 
+.img-list img {
+    max-width: 230px;
+}
+
+.img-list2 {
+    overflow : hidden; 
+    width : 240px;
+    height: 260px;
+}
+
+.img-list2 img {
+    max-width: 250px;
+}
 *{
 	margin:0;
 	padding:0;
@@ -79,6 +97,7 @@ button::-moz-focus-inner{
 html,body{
 	height:100%;
 }
+
 
 /* -----------------------------------
 
@@ -468,12 +487,17 @@ mark{
 
 ------------------------------------- */
 
+a:visited {
+    text-transform: none;
+    text-decoration: none;
+}
 a,a[class*="color"]:not(.color_light):hover,.scheme_color,.close_product:hover,
 .search_button:hover,.close_search_form:hover,blockquote:before,.banner_type_2.red b,#footer a.color_light:hover,
 .close_fieldset:hover,.text_cs_hover:hover,.tweet_list a:hover,[class*="alert_box"].error i[class^="fa "],
 label[class*="required"]:after,.vertical_list_type_7 li:before,.first_letter_1 > .fl,
 .info_block_type_1:hover [class*="icon_wrap"]{
 	color:#e74c3c;
+   
 }
 .shopping_cart,[role="banner"],.sub_menu_wrap,.banner_type_2.red,
 .vertical_list_type_3 li:before,.vertical_list_type_7 li:before{

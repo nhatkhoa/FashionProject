@@ -10,6 +10,7 @@ using Fashion.Models;
 
 namespace Fashion.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ProductsController : Controller
     {
         private ProductDbContext db = new ProductDbContext();
@@ -21,6 +22,54 @@ namespace Fashion.Controllers
             return View(products.ToList());
         }
 
+        // --- Upload Ảnh
+        public ActionResult UploadImage(Guid? id)
+        {
+            ViewBag.Id = id;
+            // --- Truy vấn sản phẩm có id truyền vào
+            var product = db.Products.Find(id);
+
+            return View(product);
+        }
+
+        [HttpPost]
+        public ActionResult UploadImage(Guid? id ,HttpPostedFileBase[] files)
+        {
+            // --- Truy vấn sản phẩm trùng id
+            var sp = db.Products.Find(id.Value);
+            try
+            {
+                foreach (var file in files)
+                {
+                    // --- Lấy dường dẫn image
+                    string link = "SanPham/" + Guid.NewGuid() +".jpg";
+                    // --- Lưu image
+                    file.SaveAs(Server.MapPath("~/" + link));
+                    // --- Thêm hình ảnh mới
+                    db.Images.Add(new Image() {Link = link, Product = sp});
+                    db.SaveChanges();
+                }
+                
+            }
+            catch(Exception e)
+            {
+                ViewBag.Status = "Lỗi : " + e.Message;
+            }
+            return View(sp);
+        }
+
+        // --- Xóa hình
+        public ActionResult XoaHinh(Guid? id)
+        {
+            // --- Truy vấn đến hình ảnh
+            var img = db.Images.FirstOrDefault(p => p.ID.Equals(id.Value));
+            // --- Lấy id sản phẩm
+            var sp = img.ProductID;
+            // --- Xóa hình
+            db.Images.Remove(img);
+            db.SaveChanges();
+            return RedirectToAction("UploadImage", new {id = sp});
+        }
         // GET: Products/Details/5
         public ActionResult Details(Guid? id)
         {
@@ -49,12 +98,35 @@ namespace Fashion.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Name,Info,Color,Size,CategoryID,BrandID,Cost,Instock")] Product product)
+        public ActionResult Create([Bind(Include = "Name,Info,Color,Size,CategoryID,BrandID,Cost,Instock")] Product product, [Bind(Include = "Images")] HttpPostedFileBase[] Images)
         {
             product.Category = db.Categories.Single(p => p.ID.Equals(product.CategoryID));
             product.Brand = db.Brands.Single(p => p.ID.Equals(product.BrandID));
             db.Products.Add(product);
             db.SaveChanges();
+
+            // ---- Cập nhật hình ảnh
+            var k = 1;
+            foreach (var image in Images)
+            {
+                try
+                {
+                    var tenFile = product.ID + "_" + k++ + ".jpg";
+                    // --- Lưu file lên thư mục
+                    image.SaveAs(Server.MapPath("~/SanPham/" + tenFile));
+                    string link = "~/SanPham/" + tenFile;
+                    // --- Thêm file vào product
+                    product.Images.Add(new Image() { Link = link });
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            // --- Cập nhật lại sản phẩm
+            db.Entry(product).State = EntityState.Modified;
+            db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 

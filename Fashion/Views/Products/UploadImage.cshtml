@@ -1,0 +1,32 @@
+﻿@model Fashion.Models.Product
+@{
+    ViewBag.Title = "Upload hình ảnh sản phẩm";
+}
+    <div class="container-fluid">
+        <div class="col-md-6">
+            <p></p>
+            <h2>Tên sản phẩm : @Html.DisplayFor(modelItem => Model.Name)</h2>
+            <h5>Nhấn vào hình để xóa...</h5>
+            @if (Model.Images.Count == 0)
+            {
+                <h3>Chưa có hình ảnh cho sản phẩm này ...</h3>
+            }
+            else
+            {
+                foreach (var item in Model.Images)
+                {
+                    <a class ="thumbnail col-md-5" href="../XoaHinh/@item.ID"><img src="../../@item.Link" /></a>
+                }
+            }
+                <h3>@ViewBag.Status</h3>
+        </div>
+@using (Html.BeginForm("UploadImage", "Products", new {id = ViewBag.Id}, FormMethod.Post, new {enctype = "multipart/form-data"}))
+{
+    <div class="col-md-4">
+        <h3>Chọn hình ảnh cho sản phẩm </h3>
+        <input class="form-control form-group-lg" type="file" name="files" value="" multiple="multiple" />
+        <p></p>
+        <input class="btn btn-lg btn-primary" type="submit" value="Upload You Image" title="Tải hình lên" />
+    </div>
+}
+    </div>
