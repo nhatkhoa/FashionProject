@@ -98,31 +98,13 @@ namespace Fashion.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Name,Info,Color,Size,CategoryID,BrandID,Cost,Instock")] Product product, [Bind(Include = "Images")] HttpPostedFileBase[] Images)
+        public ActionResult Create([Bind(Include = "Name,Info,Color,Size,CategoryID,BrandID,Cost,Instock")] Product product)
         {
             product.Category = db.Categories.Single(p => p.ID.Equals(product.CategoryID));
             product.Brand = db.Brands.Single(p => p.ID.Equals(product.BrandID));
             db.Products.Add(product);
             db.SaveChanges();
 
-            // ---- Cập nhật hình ảnh
-            var k = 1;
-            foreach (var image in Images)
-            {
-                try
-                {
-                    var tenFile = product.ID + "_" + k++ + ".jpg";
-                    // --- Lưu file lên thư mục
-                    image.SaveAs(Server.MapPath("~/SanPham/" + tenFile));
-                    string link = "~/SanPham/" + tenFile;
-                    // --- Thêm file vào product
-                    product.Images.Add(new Image() { Link = link });
-                }
-                catch
-                {
-                    continue;
-                }
-            }
             // --- Cập nhật lại sản phẩm
             db.Entry(product).State = EntityState.Modified;
             db.SaveChanges();
