@@ -1,0 +1,36 @@
+﻿@using Microsoft.AspNet.Identity
+
+
+<section class="h_top_part">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-4 col-sm-5 t_xs_align_c">
+                
+                @if (Request.IsAuthenticated)
+                {
+                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <p class="f_size_small"> @Html.ActionLink("Tài khoản : " + User.Identity.GetUserName() + " ---- ", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" }) <a href="javascript:document.getElementById('logoutForm').submit()">Thoát Tài Khoản</a> </p>
+
+                    }
+                }
+                else
+                {
+                    <p class="f_size_small">Chào mừng khách hàng mới : Vui lòng 	<a href="#" data-popup="#login_popup">Đăng Nhập</a> hoặc  @Html.ActionLink("Đăng Ký", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" }) </p>
+
+                }
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-2 t_align_c t_xs_align_c">
+                <p class="f_size_small">Đường dây nóng : <b class="color_dark">0977 966 549</b></p>
+            </div>
+            <nav class="col-lg-4 col-md-4 col-sm-5 t_align_r t_xs_align_c">
+                <ul class="d_inline_b horizontal_list clearfix f_size_small users_nav">
+                    <li><a href="#" class="default_t_color">Danh Sách Yêu Thích </a></li>
+                    <li><a href="#" class="default_t_color">Thanh Toán </a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>

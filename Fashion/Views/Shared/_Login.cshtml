@@ -1,0 +1,35 @@
+﻿@model Fashion.Models.LoginViewModel
+<div class="popup_wrap d_none" id="login_popup">
+    <section class="popup r_corners shadow">
+        <button class="bg_tr color_dark tr_all_hover text_cs_hover close f_size_large"><i class="fa fa-times"></i></button>
+        <h3 class="m_bottom_20 color_dark">Đăng Nhập Hệ Thống</h3>
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <ul>
+                <li class="m_bottom_15">
+                    @Html.LabelFor(m => m.Email, new { @class = "m_bottom_5 d_inline_b" })<br>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "r_corners full_width" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </li>
+                <li class="m_bottom_25">
+                    @Html.LabelFor(m => m.Password, new { @class = "m_bottom_5 d_inline_b" })<br>
+                    @Html.PasswordFor(m => m.Password, new { @class = "r_corners full_width" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </li>
+              
+                <li class="clearfix m_bottom_30">
+                    <button class="button_type_4 tr_all_hover r_corners f_left bg_scheme_color color_light f_mxs_none m_mxs_bottom_15">Đăng Nhập</button>
+                    <div class="f_right f_size_medium f_mxs_none">
+                        @Html.ActionLink("Quên mật khẩu?", "ForgotPassword")
+                    </div>
+                </li>
+            </ul>
+        }
+        <footer class="bg_light_color_1 t_mxs_align_c">
+            <h3 class="color_dark d_inline_middle d_mxs_block m_mxs_bottom_15">@Html.ActionLink("Đăng Ký Thành Viên", "Register")</h3>
+        </footer>
+    </section>
+</div>
+

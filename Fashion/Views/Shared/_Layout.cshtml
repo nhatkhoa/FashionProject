@@ -21,8 +21,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-
+                    <li>@Html.ActionLink("Home", "Index", "Manage")</li>
+                    <li>@Html.ActionLink("Cá Nhân", "Index", "Customers")</li>
                     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                     {
                         <li>@Html.ActionLink("Users", "Index", "UsersAdmin")</li>

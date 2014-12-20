@@ -110,7 +110,7 @@ namespace Fashion.Models
             base.Seed(context);
         }
 
-        //Create User=Admin@Admin.com with password=Admin@123456 in the Admin role        
+        // --- Tạo tài khoản admin mặc định     
         public static void InitializeIdentityForEF(ApplicationDbContext db) {
             var userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var roleManager = HttpContext.Current.GetOwinContext().Get<ApplicationRoleManager>();
@@ -118,7 +118,7 @@ namespace Fashion.Models
             const string password = "admin";
             const string roleName = "Admin";
 
-            //Create Role Admin if it does not exist
+            //Tạo nhóm quyền admin nếu tồn tại
             var role = roleManager.FindByName(roleName);
             if (role == null) {
                 role = new IdentityRole(roleName);
@@ -132,7 +132,7 @@ namespace Fashion.Models
                 result = userManager.SetLockoutEnabled(user.Id, false);
             }
 
-            // Add user admin to Role Admin if not already added
+            // Thêm nhóm quyền admin cho admin@admin.com
             var rolesForUser = userManager.GetRoles(user.Id);
             if (!rolesForUser.Contains(role.Name)) {
                 var result = userManager.AddToRole(user.Id, role.Name);

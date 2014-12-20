@@ -1,0 +1,118 @@
+﻿<div class="popup_wrap d_none" id="quick_view_product">
+    <section class="popup r_corners shadow">
+        <button class="bg_tr color_dark tr_all_hover text_cs_hover close f_size_large"><i class="fa fa-times"></i></button>
+        <div class="clearfix">
+            <div class="custom_scrollbar">
+                <!--left popup column-->
+                <div class="f_left half_column">
+                    <div class="relative d_inline_b m_bottom_10 qv_preview">
+                        <span class="hot_stripe"><img src="~/Content/images/sale_product.png" alt=""></span>
+                        <img ng-show="vm.view.Images.length !== 0" src="../../{{vm.view.Images[0]}}" class="tr_all_hover" alt="">
+                        <img ng-show="vm.view.Images.length === 0" src="~/Content/images/no.jpg" class="tr_all_hover" alt="">
+                    </div>
+                    <!--carousel-->
+                    <div class="relative qv_carousel_wrap m_bottom_20">
+                        <button class="button_type_11 t_align_c f_size_ex_large bg_cs_hover r_corners d_inline_middle bg_tr tr_all_hover qv_btn_prev">
+                            <i class="fa fa-angle-left "></i>
+                        </button>
+                        <ul class="qv_carousel d_inline_middle">
+                            <li ng-repeat="item in vm.view.Images" data-src="../../{{item}}"> <img src="../../{{item}}" alt=""></li>
+                            <li data-src="~/Content/images/quick_view_img_1.jpg"><img src="~/Content/images/quick_view_img_4.jpg" alt=""></li>
+                            <li data-src="~/Content/images/quick_view_img_2.jpg"><img src="~/Content/images/quick_view_img_5.jpg" alt=""></li>
+                            <li data-src="~/Content/images/quick_view_img_3.jpg"><img src="~/Content/images/quick_view_img_6.jpg" alt=""></li>
+                        </ul>
+                        <button class="button_type_11 t_align_c f_size_ex_large bg_cs_hover r_corners d_inline_middle bg_tr tr_all_hover qv_btn_next">
+                            <i class="fa fa-angle-right "></i>
+                        </button>
+                    </div>
+                 
+                </div>
+                <!--right popup column-->
+                <div class="f_right half_column">
+                    <!--description-->
+                    <h2 class="m_bottom_10"><a href="#" class="color_dark fw_medium">{{vm.view.Name}}</a></h2>
+                    <div class="m_bottom_10">
+                        <!--rating-->
+                        <ul class="horizontal_list d_inline_middle type_2 clearfix rating_list tr_all_hover">
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star-o empty tr_all_hover"></i>
+                                <i class="fa fa-star active tr_all_hover"></i>
+                            </li>
+                        </ul>
+                        <a href="#" class="d_inline_middle default_t_color f_size_small m_left_5">1 Đánh Giá</a>
+                    </div>
+                    <hr class="m_bottom_10 divider_type_3">
+                    <table class="description_table m_bottom_10">
+                        <tr>
+                            <td>Thương Hiệu: </td>
+                            <td><a href="#" class="color_dark">{{vm.view.Brand}}</a></td>
+                        </tr>
+                        <tr>
+                            <td>Danh Mục : </td>
+                            <td><a href="#" class="color_dark">{{vm.view.Category}}</a></td>
+                        </tr>
+                        <tr>
+                            <td>Tình trạng :</td>
+                            <td><span class="color_green">Còn Hàng - </span> {{vm.view.InStock}} cái</td>
+                        </tr>
+                    </table>
+                    <hr class="divider_type_3 m_bottom_10">
+                    <p class="m_bottom_10">Thông tin thêm : {{vm.view.Info}}</p>
+                    <hr class="divider_type_3 m_bottom_15">
+                    <div class="m_bottom_15">
+                        <span class="v_align_b f_size_ex_large">KHUYẾN MÃI : </span> <span class="v_align_b f_size_big m_left_5 scheme_color fw_medium">{{vm.view.Cost | number : c0}} VNĐ</span>
+                    </div>
+                    <table class="description_table type_2 m_bottom_15">
+                        <tr>
+                            <td class="v_align_m">Size:</td>
+                            <td class="v_align_m">
+                                <div class="custom_select f_size_medium relative d_inline_middle">
+                                    <div class="select_title r_corners relative color_dark">S</div>
+                                    <ul class="select_list d_none"></ul>
+
+                                    <select ng-model="vm.size" name="product_name">
+                                        <option ng-repeat="item in vm.view.Sizes" value="{{item}}">{{item}}</option>
+                                        <option value="x">L</option>
+                                        <option value="xs">XL</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="v_align_m">Số Lượng :</td>
+                            <td class="v_align_m">
+                                <div class="clearfix quantity r_corners d_inline_middle f_size_medium color_dark">
+                                    <button class="bg_tr d_block f_left" data-direction="down">-</button>
+                                    <input type="text" name="" readonly ng-model="quantily" value="1" class="f_left">
+                                    <button class="bg_tr d_block f_left" data-direction="up">+</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="clearfix m_bottom_15">
+                        <button class="button_type_12 r_corners bg_scheme_color color_light tr_delay_hover f_left f_size_large">Thêm Vào Giỏ</button>
+                        <button class="button_type_12 bg_light_color_2 tr_delay_hover f_left r_corners color_dark m_left_5 p_hr_0"><i class="fa fa-heart-o f_size_big"></i><span class="tooltip tr_all_hover r_corners color_dark f_size_small">Xem sau</span></button>
+                        <button class="button_type_12 bg_light_color_2 tr_delay_hover f_left r_corners color_dark m_left_5 p_hr_0"><i class="fa fa-files-o f_size_big"></i><span class="tooltip tr_all_hover r_corners color_dark f_size_small">So Sánh</span></button>
+                        <button class="button_type_12 bg_light_color_2 tr_delay_hover f_left r_corners color_dark m_left_5 p_hr_0 relative"><i class="fa fa-question-circle f_size_big"></i><span class="tooltip tr_all_hover r_corners color_dark f_size_small">Đặt câu hỏi</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

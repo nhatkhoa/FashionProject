@@ -10,11 +10,6 @@ namespace Fashion.Models
         public string Email { get; set; }
     }
 
-    public class ExternalLoginListViewModel
-    {
-        public string ReturnUrl { get; set; }
-    }
-
     public class SendCodeViewModel
     {
         public string SelectedProvider { get; set; }
@@ -67,14 +62,14 @@ namespace Fashion.Models
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 4)]
+        [StringLength(100, ErrorMessage = "Mật khẩu tối thiểu 4 kí tự.", MinimumLength = 4)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Mật Khẩu")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Nhập Lại")]
+        [Compare("Password", ErrorMessage = "Mật khẩu không trùng nhau.")]
         public string ConfirmPassword { get; set; }
     }
 

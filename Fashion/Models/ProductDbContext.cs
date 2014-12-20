@@ -18,5 +18,7 @@ namespace Fashion.Models
         public DbSet<Category> Categories { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Image> Images { get; set; }
+
+        public System.Data.Entity.DbSet<Fashion.Models.Customer> Customers { get; set; }
     }
 }

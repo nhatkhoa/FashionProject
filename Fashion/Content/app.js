@@ -69,14 +69,13 @@
             vm.carts = $localStorage.carts;
         });
 
+      
         
 
     }]);
 
     app.controller("ShowCtrl", ['$rootScope', '$http', '$localStorage', function ($rootScope, $http, $localStorage) {
         var show = this
-        // --- Khai báo danh sách products
-        show.products = [];
 
         // --- Hàm load dữ liệu ban đầu
         show.loadData = function () {
@@ -144,12 +143,14 @@
 
         };
         
+
         
 
     }]);
     app.controller("ProductCtrl", ['$scope', '$rootScope', '$http', '$localStorage', function ($scope, $rootScope, $http, $localStorage) {
         var pro = this
         pro.selectPage = 1;
+        pro.$key = "";
         // --- Khai báo danh sách products
         //pro.products = [];
 
@@ -195,6 +196,7 @@
 
         // --- Hàm thêm vào giỏ hàng
         pro.cart = function (item) {
+
             // --- Lấy giỏ hàng từ bộ nhớ
             var carts = $localStorage.carts;
             // --- Lấy index của item (nếu có tồn tại)
@@ -204,11 +206,11 @@
                 // --- Thêm sản phẩm vào giỏ và lấy index dùng để cập nhật số lượng
                 var index = carts.items.push(item);
                 // --- Số lượng ứng với item ban đầu là 1
-                carts.num[index] = 1;
+                carts.num.push(1);
                 // --- Tăng số lượng sản phẩm
                 carts.count = carts.count + 1;
                 // --- Tăng tổng tiền
-                carts.total = carts.total + item.Cost;
+                carts.total = carts.total + int.parse(item.Cost);
             } else {
                 // --- Cập nhật số lượng và tổng tiền
                 carts.num[i]++;
@@ -218,6 +220,7 @@
                 carts.total = carts + item.Cost;
             }
 
+
             // --- Cập nhật lại vào bộ nhớ
             $localStorage.carts = carts;
 
@@ -226,7 +229,10 @@
 
         };
 
+
     }]);
+
+
 
 
 })();

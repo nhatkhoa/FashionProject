@@ -1,0 +1,44 @@
+﻿<li class="m_left_5 relative container3d" id="shopping_button">
+    <a role="button" href="#" class="button_type_3 color_light bg_scheme_color d_block r_corners tr_delay_hover box_s_none">
+        <span class="d_inline_middle shop_icon m_mxs_right_0">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="count tr_delay_hover type_2 circle t_align_c">{{vm.carts.count}}</span>
+        </span>
+        <b class="d_mxs_none">Tổng cộng : {{vm.carts.total}}</b>
+    </a>
+    <div class="shopping_cart top_arrow tr_all_hover r_corners">
+        <div class="f_size_medium sc_header">Giỏ hàng của bạn</div>
+        <ul class="products_list">
+            <li ng-repeat="item in vm.carts.items">
+                <div class="clearfix">
+                    <!--product image-->
+                    <img class="f_left m_right_10" src="~/{{item.Image}}" alt="">
+                    <!--product description-->
+                    <div class="f_left product_description">
+                        <a href="#" class="color_dark m_bottom_5 d_block">{{item.Name}}</a>
+                        <a href="#" class="color_dark m_bottom_5 d_block">Danh Mục: {{item.Category}}</a>
+                        <a href="#" class="color_dark m_bottom_5 d_block">Thương Hiệu: {{item.Brand}} </a>
+ 
+                    </div>
+                    <!--product price-->
+                    <div class="f_left f_size_medium">
+                        <div class="clearfix">
+                            {{vm.carts.num[$index]}} x <b class="color_dark">{{item.Cost | number : c0}} VNĐ</b>
+                        </div>
+                        <button ng-click="vm.remove(item)" class="close_product color_dark tr_hover"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        <!--total price-->
+        <ul class="total_price bg_light_color_1 t_align_r color_dark">
+            <li>Số Sản Phẩm : <b class="f_size_large bold scheme_color sc_price t_align_l d_inline_b m_left_15"> {{vm.carts.count}}</b></li>
+            <li>Tổng cộng : <b class="f_size_large bold scheme_color sc_price t_align_l d_inline_b m_left_15"> {{vm.carts.total}}</b></li>
+        </ul>
+        <div class="sc_footer t_align_c">
+            <a ng-click="vm.clear()" role="button" class="button_type_4 d_inline_middle bg_light_color_2 r_corners color_dark t_align_c tr_all_hover m_mxs_bottom_5">Làm Trống Giỏ</a>
+            <a href="#" role="button" class="button_type_4 bg_scheme_color d_inline_middle r_corners tr_all_hover color_light">Thanh Toán</a>
+        </div>
+    </div>
+</li>
